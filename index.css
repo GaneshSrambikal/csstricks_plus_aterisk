@@ -4,14 +4,14 @@ body {
   height: 90vh;
   background-color: aqua;
   display: flex;
+  /* flex-direction: column; */
   justify-content: center;
-  align-items: center;
 }
 .list {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .1rem;
+  gap: 0.2rem;
   transform-style: preserve-3d;
   transform: perspective(1000px);
 }
@@ -21,7 +21,7 @@ body {
   height: 200px;
 }
 .list .item {
-  transition: 0.5s ease-in;
+  transition: 0.5s;
   filter: brightness(0);
 }
 .list .item:hover {
@@ -45,10 +45,45 @@ body {
   transform: translateZ(150px) rotateY(-40deg);
 }
 .list .item:has(+ * + *:hover) {
-    filter: brightness(0.4);
-    transform: translateZ(70px) rotateY(-20deg);
-  }
-  .list .item:has(+ * + * + *:hover) {
-    filter: brightness(0.2);
-    transform: translateZ(30px) rotateY(-10deg);
-  }
+  filter: brightness(0.4);
+  transform: translateZ(70px) rotateY(-20deg);
+}
+.list .item:has(+ * + * + *:hover) {
+  filter: brightness(0.2);
+  transform: translateZ(30px) rotateY(-10deg);
+}
+
+.banner{
+  /* color: white; */
+  position: absolute;
+  left: 0;
+  bottom: 5rem;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .2rem;
+  border: none;
+  /* border-radius: 50%; */
+}
+.banner .card{
+  background-color: #0f4791;
+  /* padding: 2px; */
+  border-radius: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .4s;
+}
+.banner .card img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.banner .card:hover{
+  transform: translate(10px);
+}
