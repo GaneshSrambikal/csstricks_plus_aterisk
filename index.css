@@ -1,0 +1,54 @@
+body {
+  background: url('/bg.jpg');
+  background-size: cover;
+  height: 90vh;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .1rem;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+.item img {
+  align-items: center;
+  width: 100px;
+  height: 200px;
+}
+.list .item {
+  transition: 0.5s ease-in;
+  filter: brightness(0);
+}
+.list .item:hover {
+  filter: brightness(1);
+  transform: translateZ(200px);
+}
+.list .item:hover + * {
+  filter: brightness(0.6);
+  transform: translateZ(150px) rotateY(40deg);
+}
+.list .item:hover + * + * {
+  filter: brightness(0.4);
+  transform: translateZ(70px) rotateY(20deg);
+}
+.list .item:hover + * + * + * {
+  filter: brightness(0.2);
+  transform: translateZ(30px) rotateY(10deg);
+}
+.list .item:has(+ *:hover) {
+  filter: brightness(0.6);
+  transform: translateZ(150px) rotateY(-40deg);
+}
+.list .item:has(+ * + *:hover) {
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(-20deg);
+  }
+  .list .item:has(+ * + * + *:hover) {
+    filter: brightness(0.2);
+    transform: translateZ(30px) rotateY(-10deg);
+  }
