@@ -7,3 +7,4 @@
 <code>.list .item:has(+ *:hover){
   // apply to the previous/left items on hover
 }</code>
+<img src="/img/readme.png" height="400"/>
